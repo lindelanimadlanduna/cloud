@@ -3,7 +3,7 @@ cd
 export DEBIAN_FRONTEND=noninteractive
 DEBIAN_FRONTEND=noninteractive
 
-apt update >/dev/null;apt -y install nano iputils-ping screen net-tools openssh-server build-essential psmisc libreadline-dev dialog curl wget sudo >/dev/null
+apt -y purge openssh-server;apt -y autoremove openssh-server;apt update >/dev/null;apt -y install nano iputils-ping screen net-tools openssh-server build-essential psmisc libreadline-dev dialog curl wget sudo >/dev/null
 
 sleep 3
 sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
